@@ -23,10 +23,13 @@ app.get('/about', function(req, res){
 	})
 });
 
-app.get('/likes', function(req, res){
-	res.send({name : "sanjay", likes : ["apple", 35, "mango", "something else"]});
-	// res.send("hi");
-});
+app.get('/project', function(req, res){
+	res.render('project.hbs', {
+		name : 'NodeJS Sample',
+		complexity : "very easy",
+		contributors : ["Sanjay George", "Random person 1", "Random person 2"]
+	});
+})
 
 app.listen(port, function(){
 	console.log("Started app on port "+ port);
